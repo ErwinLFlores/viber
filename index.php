@@ -1,5 +1,7 @@
 <?php
 
+echo "VIBER";
+
 $access_token = '4e0bdc59c767deb6-e880632517db73a1-1c6f4008eb298b17';
 
 $request = file_get_contents("php://input");
@@ -19,7 +21,7 @@ elseif($input['event'] == 'message'){
     $sender_id = $input['sender']['id'];
     $sender_name = $input['sender']['name'];
 
-    $message_to_reply = 'hello cloudstaffers';
+    $message_to_reply = 'ERWINF VIBER TEST';
 
     $data['auth_token'] = $access_token;
     $data['receiver'] = $sender_id;
@@ -39,5 +41,7 @@ function sendMEssage($data){
     curl_setopt($ch,CURLOPT_HTTPHEADER,array('Content-Type: application/json'));
     $result = curl_exec($ch);
 
-}   return $result;
+    return $result;
+}   
+
 ?>
