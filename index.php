@@ -21,7 +21,7 @@ elseif($input['event'] == 'message'){
     $sender_id = $input['sender']['id'];
     $sender_name = $input['sender']['name'];
 
-    $message_to_reply = 'ERWINF VIBER TEST';
+    $message_to_reply = 'Im erwinf hello '.$sender_name;
 
     $data['auth_token'] = $access_token;
     $data['receiver'] = $sender_id;
