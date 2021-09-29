@@ -10,8 +10,8 @@ $input = json_decode($request, true);
 if($input['event'] == 'webhook')
 {
     $webhook_response['status'] = 0;
-    $webhook_response['status_message'] = 'ok';
-    $webhook_response['event_types'] = 'delivered';
+    $webhook_response['status_message'] = "ok";
+    $webhook_response['event_types'] = "delivered";
     echo json_encode($webhook_response);
     die;
 }
@@ -28,11 +28,10 @@ elseif($input['event'] == 'message'){
     $data['type'] = "text";
     $data['text'] = $message_to_reply;
     sendMessage($data);
-    
 }
 
 function sendMEssage($data){
-    $url = "https//chatpai.viber.com/pa/send_message";
+    $url = "https://chatapi.viber.com/pa/send_message";
     $jsonData = json_encode($data);
 
     $ch = curl_init($url);
